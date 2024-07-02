@@ -10,7 +10,7 @@ app.get("/", (req, res) => {
 
 
 
-app.post("/send", async (req, res) => {
+app.post("/", async (req, res) => {
   const {post_link, message, platform} = req.body;
   if (platform == "reddit") {
     var response = await post_to_reddit(post_link, message);
