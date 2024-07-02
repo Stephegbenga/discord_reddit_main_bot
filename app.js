@@ -3,6 +3,8 @@ const app = express();
 const port = 3000;
 const {post_to_reddit} = require("./reddit");
 
+app.use(express.json());
+
 // Basic route
 app.get("/", (req, res) => {
   res.send("mainbot v1.0!");
@@ -15,9 +17,9 @@ app.post("/", async (req, res) => {
   if (platform == "reddit") {
     var response = await post_to_reddit(post_link, message);
     return response
-  } else {
+  } 
     return res.send({success: false, message: "platform is not available"})
-  }
+  
 
 });
 
