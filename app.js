@@ -5,7 +5,7 @@ const {post_to_reddit} = require("./reddit");
 
 // Basic route
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.send("mainbot v1.0!");
 });
 
 
